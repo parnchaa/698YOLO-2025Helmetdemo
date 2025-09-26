@@ -7,7 +7,7 @@ import numpy as np
 st.title("🛡️ YOLO Helmet Detection App")
 
 # 🚀 โหลดโมเดล YOLOv8
-model = YOLO("runs/detect/train3/weights/best.pt")  # ปรับ path ตามโมเดลของคุณ
+model = YOLO("best.pt")  # ปรับ path ตามโมเดลของคุณ
 
 # 📤 อัปโหลดภาพ
 uploaded_image = st.file_uploader("Upload an image (jpg, png)", type=["jpg", "jpeg", "png"])
