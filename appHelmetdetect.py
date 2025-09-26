@@ -40,5 +40,3 @@ if uploaded_image is not None:
     Helmet_count = class_names.count("Helmet")
     st.write(f"Number of Helmet detected: **{Helmet_count}**")
 
-else:
-    st.warning("No objects detected in the image.")
