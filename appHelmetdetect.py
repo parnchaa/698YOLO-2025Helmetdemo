@@ -30,22 +30,13 @@ if uploaded_image is not None:
     result_image = results[0].plot()
     st.image(result_image, caption="YOLO Detection Result", use_container_width=True)
     st.success("Detection completed!")
-# ✅ ใส่โค้ดนี้ตรงนี้เลย
-if results and results[0].boxes is not None:
+    
+    # Extract detection results
     boxes = results[0].boxes
     class_ids = boxes.cls.cpu().numpy().astype(int)
     class_names = [model.names[i] for i in class_ids]
-    helmet_count = class_names.count("Helmet")
-    st.write(f"Number of Helmet detected: **{helmet_count}**")
-else:
-    st.warning("No helmets detected in the image.")
-    
-    # Extract detection results
-    # boxes = results[0].boxes
-    # class_ids = boxes.cls.cpu().numpy().astype(int)
-    # class_names = [model.names[i] for i in class_ids]
 
     # Count Helmet
-    # Helmet_count = class_names.count("Helmet")
-    # st.write(f"Number of Helmet detected: **{Helmet_count}**")
+    Helmet_count = class_names.count("Helmet")
+    st.write(f"Number of Helmet detected: **{Helmet_count}**")
 
