@@ -40,11 +40,5 @@ if uploaded_image is not None:
     Helmet_count = class_names.count("Helmet")
     st.write(f"Number of Helmet detected: **{Helmet_count}**")
 
-if results and results[0].boxes is not None:
-    boxes = results[0].boxes
-    class_ids = boxes.cls.cpu().numpy().astype(int)
-    class_names = [model.names[i] for i in class_ids]
-    helmet_count = class_names.count("Helmet")
-    st.write(f"Number of Helmet detected: **{helmet_count}**")
 else:
     st.warning("No objects detected in the image.")
